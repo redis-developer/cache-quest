@@ -1,0 +1,61 @@
+{
+  "swordBeam": {
+    "name": "Cache Beam",
+    "unlocked": false,
+    "unlock": "unlockSwordBeam",
+    "stats": {
+      "damage": 5,
+      "range": 150
+    },
+    "statsMax": {
+      "damage": 15,
+      "range": 450
+    },
+    "statsIncrement": {
+      "damage": 3,
+      "range": 25
+    }
+  },
+
+  "shuriken": {
+    "name": "Projectiles",
+    "unlocked": false,
+    "unlock": "unlockShuriken",
+    "stats": {
+      "damage": 5,
+      "range": 100,
+      "cooldown": -1500
+    },
+    "statsMax": {
+      "damage": 25,
+      "range": 240,
+      "cooldown": -250
+    },
+    "statsIncrement": {
+      "damage": 5,
+      "range": 20,
+      "cooldown": 250
+    }
+  },
+
+  "shieldAura": {
+    "name": "Hybrid Shield",
+    "unlocked": false,
+    "unlock": "unlockShieldAura",
+    "stats": {
+      "damage": 5,
+      "range": 90,
+      "cooldown": -2000
+    },
+    "statsMax": {
+      "damage": 14,
+      "range": 180,
+      "cooldown": -800
+    },
+    "statsIncrement": {
+      "damage": 2,
+      "range": 15,
+      "cooldown": 200
+    }
+  }
+}
