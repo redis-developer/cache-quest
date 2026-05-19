@@ -136,20 +136,15 @@ export async function one(id) {
 /**
  * Searches for game by name and/or status
  *
- * @param {string} [name]
- * @param {string} [status]
+ * @param {string} [id]
  * @returns {Promise<Games>}
  */
-export async function search(name, status) {
+export async function search(id, status) {
   const redis = await getClient();
   const searches = [];
 
-  if (name) {
-    searches.push(`@name:(${name})`);
-  }
-
-  if (status) {
-    searches.push(`@status:"${status}"`);
+  if (id) {
+    searches.push(`@id:(${id})`);
   }
 
   return /** @type {Promise<Games>} */ (redis.ft.search(GAME_INDEX, searches.join(" ")));
