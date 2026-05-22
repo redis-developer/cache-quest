@@ -194,23 +194,17 @@ function setEventsSurvivor(player) {
     if (player.currentScore > playerState.get().highScore[leaderboard]) {
       playerState.set("highScore", leaderboard, player.currentScore);
       highScore = true;
+      await saveScore(player.currentScore);
     }
 
     gameOver({ width: 400, height: 330, text: 24 }, player.currentScore, highScore);
-
     k.pressButton("pause");
 
     await savePlayerData();
     // await saveGameData();
 
-    await saveScore(player.currentScore);
-    await k.wait(1);
+    await k.wait(0.5);
     k.onButtonPress("start", () => k.go(playerState.get().map));
-
-    // const anyKey = player.onKeyPress(() => {
-    //   k.go("level1");
-    //   anyKey.cancel();
-    // });
   });
 }
 

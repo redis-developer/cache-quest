@@ -36,11 +36,8 @@ export async function addLeaderboardEntry(key, score, member) {
   const redis = await getClient();
   // const date = new Date();
 
-  //ZADD key score member, where member is a string that includes the member name and the date
-  const result = await redis.zAdd(key, [
-    { value: member, score: score },
-    // { value: member + "-" + date.toISOString(), score: score },
-  ]);
+  //ZADD key score member
+  const result = await redis.zAdd(key, { value: member, score: score }, { GT: true });
 
   if (result > 0) {
     return { status: 200, message: "Added new leaderboard entry" };
