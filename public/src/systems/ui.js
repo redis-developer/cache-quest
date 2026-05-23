@@ -273,28 +273,6 @@ async function createCopyButton(playerPos) {
 
       console.error("Failed to copy: ", err);
     }
-
-    //new tab with data
-    // try {
-    //   // // Open a new blank tab
-    //   const newTab = window.open();
-
-    //   // Write the JSON into the new tab's document
-    //   newTab.document.write(`<html><body><pre>${prettyJSON}</pre></body></html>`);
-    //   newTab.document.close();
-    // } catch {
-    //   const m_alert = k.get("alert")[0];
-    //   if (m_alert) m_alert.destroy();
-
-    //   createAlert(
-    //     k.center().add(0, 245),
-    //     { width: 550, height: 40, text: 24 },
-    //     "Popup window blocked",
-    //     5,
-    //   );
-
-    //   console.warn("Disable popup blocker to see player data");
-    // }
   });
 
   return button;

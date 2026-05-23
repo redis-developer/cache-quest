@@ -30,28 +30,8 @@ app.use(
       httpOnly: false, //if true prevent client from reading cookie
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     },
-  })
+  }),
 );
-
-// app.use((req, res, next) => {
-//   if (["POST", "PUT", "PATCH"].includes(req.method)) {
-//     express.json({ limit: "10mb" })(req, res, next);
-//   } else {
-//     next();
-//   }
-// });
-
-app.use("/hello", (req, res) => {
-  if (req.session.viewCount) req.session.viewCount++;
-  else req.session.viewCount = 1;
-
-  res.send(
-    req.session
-    // `id: ${req.session.id}<br>
-    // viewCount: ${req.session.viewCount}<br>
-    // session: ${JSON.stringify(req.session, null, "<p>")}`
-  );
-});
 
 app.use("/session", (req, res) => {
   res.send({ id: req.session.id });

@@ -203,19 +203,3 @@ export async function getSessionId() {
 
   return session;
 }
-
-// export async function getSignup() {
-//   let response = await fetch(`/api/leaderboard/${LEADERBOARD_PREFIX}?count=${count}`, {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Authorization": API_KEY,
-//     },
-//   });
-
-//   if (!response.ok) {
-//     console.error(`Error updating leaderboard: ${response.statusText}`);
-//   }
-
-//   return response.json();
-// }

@@ -2,14 +2,7 @@ import k from "../kaplayContext.js";
 import { COLOR_GREEN, COLOR_PARCHMENT } from "./constants.js";
 
 export async function generateDialog(content, pos, callback) {
-  const dialogBox = k.add([
-    // k.rect(1180, 200),
-    // k.color(255, 175, 100),
-    k.sprite("dialog"),
-    k.pos(pos),
-    k.fixed(),
-    k.layer("ui"),
-  ]);
+  const dialogBox = k.add([k.sprite("dialog"), k.pos(pos), k.fixed(), k.layer("ui")]);
 
   const speakerName = dialogBox.add([
     k.pos(40, 30),
