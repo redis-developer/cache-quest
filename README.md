@@ -23,12 +23,16 @@ There are two ways to run this project once you've cloned the repo. You can run 
 cp .env.docker.example .env.docker
 ```
 
-### 2. Verify the `.env.docker` file:
-
 Your `.env.docker` should use the appropriate docker internal URLs.
 
 ```bash
 REDIS_URL="redis://redis:6379"
+```
+
+### 2. Copy and rename the `.env.example` file:
+
+```bash
+cp .env.example .env
 ```
 
 Your `.env` should use localhost for the `REDIS_URL`
@@ -46,19 +50,13 @@ PORT = 3000
 docker compose up -d
 ```
 
+Navigate to `http://localhost:3000` to test play the game.
+
 ## Option 2: Run using Node with Redis Cloud
 
-### 1. Copy and rename the `.env.example` file
+### 1. Connect to Redis Cloud
 
-```bash
-cp .env.example .env
-```
-
-### 2. Connect to Redis Cloud
-
-Instead of a locally hosted Redis server, you can connect to a free Redis database on Redis Cloud.
-
-If you don't yet have a database setup in Redis Cloud [get started here for free](https://redis.io/try-free/?utm_medium=webinar&utm_source=live-link&utm_campaign=wb-2026-04-30-cache-quest-building-a-lag-free-game-backend).
+Instead of a locally hosted Redis server, you can connect to a free Redis database on Redis Cloud. If you don't yet have a database setup in Redis Cloud [get started here for free](https://redis.io/try-free/?utm_medium=webinar&utm_source=live-link&utm_campaign=wb-2026-04-30-cache-quest-building-a-lag-free-game-backend).
 
 To connect to a Redis Cloud database, log into the Redis Cloud console and find the following:
 
@@ -66,6 +64,12 @@ To connect to a Redis Cloud database, log into the Redis Cloud console and find 
 1. Your `username` (`default` is the default username, otherwise find the one you setup)
 1. Your `password` (either setup through Data Access Control, or available in the `Security` section of the database
    page).
+
+### 2. Copy and rename the `.env.example` file
+
+```bash
+cp .env.example .env
+```
 
 ### 3. Edit environment variables
 
@@ -86,6 +90,8 @@ npm install
 # then
 npm run dev
 ```
+
+Navigate to `http://localhost:3000` to test play the game.
 
 # Project structure
 
